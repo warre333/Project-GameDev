@@ -71,7 +71,7 @@ namespace Project
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin(transformMatrix: camera.Transform);
+            spriteBatch.Begin(transformMatrix: camera.Transform, sortMode: SpriteSortMode.FrontToBack);
                         
             player.Draw(spriteBatch);
             mapManager.Draw(spriteBatch);

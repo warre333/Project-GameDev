@@ -26,7 +26,7 @@ namespace Project.Maps
                 for (int y = 0; y < layout.GetLength(0); y++)
                 {
                     TileType type = (TileType)layout[y, x];
-                    tiles[x, y] = tileFactory.Add(type, x * tileSize, y * tileSize);
+                    tiles[x, y] = tileFactory.Add(type, x * tileSize - layout.GetLength(1) * tileSize / 2 + 32, y * tileSize - layout.GetLength(0) * tileSize / 2 + 32);
                 }
             }
         }
