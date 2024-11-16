@@ -20,7 +20,7 @@ namespace Project.Characters
 
             InputReader = inputReader;
             Position = new Vector2(1, 1);
-            Speed = new Vector2(1, 1);
+            Speed = new Vector2(1, 1) * 10;
 
         }
         override public void Draw(SpriteBatch spriteBatch)

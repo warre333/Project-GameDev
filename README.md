@@ -3,3 +3,18 @@ Dungeon game, a player can walk around in a automatic generated map. Monsters sp
 
 # Changelog
  For detailed updates, please refer to the [CHANGELOG.md](CHANGELOG.md) page.
+
+# Features
+- [x] Player movement
+- [x] Camera movement
+- [x] Animation handling
+- [x] Simple map loading
+- [ ] Map generation
+- [ ] Collision detection
+- [ ] Health system
+- [ ] Enemies
+- [ ] Enemy spawning
+- [ ] Key and door system
+- [ ] Level & difficulty system
+- [ ] Start screen
+- [ ] Game over screen

@@ -5,6 +5,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
+using Project.Tiles;
+using System.Collections.Generic;
 
 namespace Project
 {
@@ -17,7 +19,11 @@ namespace Project
 
         private Texture2D playerTexture;
         static public Texture2D tilesTexture;
+
+        static public int tileSize = 16;
+
         private Player player;
+        private MapManager mapManager = new MapManager();
 
         public Game1()
         {
@@ -44,6 +50,8 @@ namespace Project
             // TODO: use this.Content to load your game content here
             playerTexture = Content.Load<Texture2D>("lancelot_");
             tilesTexture = Content.Load<Texture2D>("Dungeon tileset");
+
+            mapManager.LoadMap("Content/Maps/Map-1.txt");
         }
 
         protected override void Update(GameTime gameTime)
@@ -63,10 +71,10 @@ namespace Project
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
             spriteBatch.Begin(transformMatrix: camera.Transform);
-
+                        
             player.Draw(spriteBatch);
+            mapManager.Draw(spriteBatch);
 
             spriteBatch.End();
 

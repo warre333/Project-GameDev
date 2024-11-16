@@ -7,11 +7,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Project.Tiles
 {
-    public class WallTile : Tile
+    public class WallSideTile : Tile
     {
-        public WallTile(int x, int y) : base(x, y)
+        public WallSideTile(int x, int y) : base(x, y)
         {
-            SourceRectangle = new Rectangle(48, 0, 16, 32);
+            SourceRectangle = new Rectangle(32, 16, 16, 16);
         }
     }
 }
