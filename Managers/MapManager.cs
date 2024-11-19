@@ -49,6 +49,11 @@ namespace Project.Managers
             Maps.Add(map);
         }
 
+        public Map GetCurrentMap()
+        {
+            return Maps[MapNumber - 1];
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             Map map = Maps[MapNumber - 1];

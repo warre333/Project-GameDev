@@ -12,6 +12,7 @@ namespace Project.Tiles
         public WallRightTopTile(int x, int y) : base(x, y)
         {
             SourceRectangle = new Rectangle(64, 0, 16, 16);
+            IsCollidable = true;
         }
     }
 }

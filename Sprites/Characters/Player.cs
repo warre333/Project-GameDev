@@ -1,13 +1,14 @@
 ﻿using Project.Interfaces;
-using Project.States;
+using Project.Managers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Project.Characters
 {
-    public class Player : Character, IMovable
+    public class Player : Character, IMovable, ICollidable
     {
         public IInputReader InputReader { get; set; }
+        public Vector2 Size { get; set; }
 
         public Player(Texture2D texture, IInputReader inputReader) : base(texture)
         {
@@ -21,7 +22,7 @@ namespace Project.Characters
             InputReader = inputReader;
             Position = new Vector2(1, 1);
             Speed = new Vector2(1, 1) * 10;
-
+            Size = new Vector2(32, 32);
         }
         override public void Draw(SpriteBatch spriteBatch)
         {
@@ -37,6 +38,11 @@ namespace Project.Characters
         private void Move()
         {
             MovementManager.Move(this, animationState);
+        }
+
+        public Rectangle GetBoundingBox()
+        {
+            return new Rectangle((int)Position.X, (int)Position.Y, 32, 32);
         }
     }
 }

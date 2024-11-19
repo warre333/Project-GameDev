@@ -21,3 +21,6 @@ Code die ik maakte voor het project voordat ik van idee wisselde herbruik ik hie
 ## 0.002
 - Added: Tiles 
 - Added: Simple map loaded from a text file.
+
+## 0.003
+- Added: Collision detection between player and tiles.

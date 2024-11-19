@@ -10,9 +10,10 @@ Dungeon game, a player can walk around in a automatic generated map. Monsters sp
 - [x] Animation handling
 - [x] Simple map loading
 - [ ] Map generation
-- [ ] Collision detection
+- [x] Collision detection (Tiles)
 - [ ] Health system
 - [ ] Enemies
+- [ ] Collision detection (Enemies)
 - [ ] Enemy spawning
 - [ ] Key and door system
 - [ ] Level & difficulty system

@@ -4,10 +4,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Project.Tiles
 {
-    public class Tile : IMapComponent
+    public class Tile : IMapComponent, ICollidable
     {
         public Vector2 Position { get; }
         public Rectangle SourceRectangle { get; set; }
+        public bool IsCollidable { get; set; }
 
         public Tile(int x, int y)
         {
@@ -17,6 +18,11 @@ namespace Project.Tiles
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Game1.tilesTexture, Position, SourceRectangle, Color.White, 0, new Vector2(0, 0), 2f, SpriteEffects.None, 0);
+        }
+
+        public Rectangle GetBoundingBox()
+        {
+            return IsCollidable ? new Rectangle((int)Position.X, (int)Position.Y, SourceRectangle.Width, SourceRectangle.Height) : Rectangle.Empty;
         }
     }
 }

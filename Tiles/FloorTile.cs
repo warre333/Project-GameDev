@@ -12,6 +12,7 @@ namespace Project.Tiles
         public FloorTile(int x, int y) : base(x, y)
         {
             SourceRectangle = new Rectangle(16, 0, 16, 16);
+            IsCollidable = false;
         }
     }
 }

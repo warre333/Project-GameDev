@@ -23,7 +23,7 @@ namespace Project
         static public int tileSize = 16;
 
         private Player player;
-        private MapManager mapManager = new MapManager();
+        public static MapManager mapManager = new MapManager();
 
         public Game1()
         {
