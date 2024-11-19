@@ -7,7 +7,6 @@ namespace Project.Interfaces
         Vector2 Position { get; set; }
         Vector2 Speed { get; set; }
         Vector2 Size { get; }
-        IInputReader InputReader { get; set; }
 
     }
 }

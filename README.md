@@ -12,7 +12,10 @@ Dungeon game, a player can walk around in a automatic generated map. Monsters sp
 - [ ] Map generation
 - [x] Collision detection (Tiles)
 - [x] Health system
-- [ ] Enemies (AI: Follow player, shoot from distance, attack when close)
+- [ ] Enemies 
+- [ ] Attack system (Player)
+- [ ] Attack system (Enemy)
+- [ ] Enemy AI: Follow player, shoot from distance, attack when close)
 - [ ] Acceleration and deceleration
 - [ ] Collision detection (Enemies)
 - [ ] Enemy spawning

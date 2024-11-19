@@ -8,9 +8,8 @@ namespace Project.Managers
 {
     public static class MovementManager
     {
-        public static void Move(IMovable movable, AnimationState animationState)
+        public static void Move(IMovable movable, AnimationState animationState, Vector2 direction)
         {
-            Vector2 direction = movable.InputReader.ReadInput();
             Vector2 distance = direction * movable.Speed;
             Vector2 newPosition = movable.Position + distance;
 
