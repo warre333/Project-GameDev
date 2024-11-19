@@ -1,4 +1,5 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/../assets/heart.png","C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/bin/DesktopGL/Content/heart.xnb","TextureProcessor","Texture2DContent",59824,997693,0.1173643
 "C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/Dungeon tileset.png","C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/bin/DesktopGL/Content/Dungeon tileset.xnb","TextureProcessor","Texture2DContent",16448,294997,0.0930707
 "C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/dust_.png","C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/bin/DesktopGL/Content/dust_.xnb","TextureProcessor","Texture2DContent",147,1621,0.0018341
 "C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/excalibur_.png","C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/bin/DesktopGL/Content/excalibur_.xnb","TextureProcessor","Texture2DContent",1821,65621,0.0037242

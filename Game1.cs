@@ -18,6 +18,7 @@ namespace Project
         Camera camera = new Camera();
 
         private Texture2D playerTexture;
+        private Texture2D healthTexture;
         static public Texture2D tilesTexture;
 
         static public int tileSize = 16;
@@ -40,7 +41,7 @@ namespace Project
 
             ScreenManager.Setup(graphics, Window);
 
-            player = new Player(playerTexture, new KeyboardReader());
+            player = new Player(playerTexture, new KeyboardReader(), healthTexture, camera);
         }
 
         protected override void LoadContent()
@@ -49,6 +50,7 @@ namespace Project
 
             // TODO: use this.Content to load your game content here
             playerTexture = Content.Load<Texture2D>("lancelot_");
+            healthTexture = Content.Load<Texture2D>("heart");
             tilesTexture = Content.Load<Texture2D>("Dungeon tileset");
 
             mapManager.LoadMap("Content/Maps/Map-1.txt");

@@ -24,3 +24,6 @@ Code die ik maakte voor het project voordat ik van idee wisselde herbruik ik hie
 
 ## 0.003
 - Added: Collision detection between player and tiles.
+
+## 0.004
+- Added: Health system for the player.

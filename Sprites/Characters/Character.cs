@@ -11,7 +11,6 @@ namespace Project.Characters
         protected AnimationState animationState;
         public Texture2D Texture { get; set; }
         public Vector2 Position { get; set; }
-        public Vector2 Speed { get; set; }
 
         public Character(Texture2D texture)
         {

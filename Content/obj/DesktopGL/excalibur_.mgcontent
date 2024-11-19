@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>c:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/excalibur_.png</SourceFile>
+  <SourceFile>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/excalibur_.png</SourceFile>
   <SourceTime>2024-11-08T09:53:14.9360004+01:00</SourceTime>
-  <DestFile>c:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/bin/DesktopGL/excalibur_.xnb</DestFile>
-  <DestTime>2024-11-08T10:10:49.1813928+01:00</DestTime>
+  <DestFile>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/bin/DesktopGL/excalibur_.xnb</DestFile>
+  <DestTime>2024-11-19T22:11:08.3064896+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
