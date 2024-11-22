@@ -26,10 +26,7 @@ namespace Project.Sprites.Characters.Enemy
             animationState.AddAnimation(CharacterAnimation.WALK_DOWN, 256, 320, 8, 10, 71, 71, 8);
             animationState.PlayAnimation(CharacterAnimation.IDLE);
 
-            Position = new Vector2(1, 1);
-            Speed = new Vector2(1, 1) * 10;
             Size = new Vector2(32, 32);
-            Health = new Health(2, heartTexture);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -45,7 +42,7 @@ namespace Project.Sprites.Characters.Enemy
 
         private void Move()
         {
-            MovementManager.Move(this, animationState, new Vector2(1,1)); // Change direction to AI
+            MovementManager.Move(this, animationState, new Vector2(0, 0)); // Change direction to AI
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Project.Characters
 
             InputReader = inputReader;
             Position = new Vector2(1, 1);
-            Speed = new Vector2(1, 1) * 10;
+            Speed = new Vector2(2, 1) * 2;
             Size = new Vector2(32, 32);
             Health = new Health(10, heartTexture);
 

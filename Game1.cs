@@ -29,7 +29,9 @@ namespace Project
 
         private Player player;
         private List<Enemy> enemies;
-        private Enemy enemy;
+        private Enemy wizard;
+        private Enemy knight;
+        private Enemy fairy;
         public static MapManager mapManager = new MapManager();
 
         public Game1()
@@ -49,7 +51,9 @@ namespace Project
 
             player = new Player(playerTexture, new KeyboardReader(), healthTexture, camera);
             enemies = new List<Enemy>();
-            enemy = new Enemy(wizardTexture, healthTexture);
+            wizard = new Wizard(wizardTexture, healthTexture);
+            knight = new Knight(knightTexture, healthTexture);
+            fairy = new Fairy(fairyTexture, healthTexture);
         }
 
         protected override void LoadContent()
@@ -76,7 +80,9 @@ namespace Project
 
             camera.Follow(player);
             player.Update(gameTime);
-            enemy.Update(gameTime);
+            wizard.Update(gameTime);
+            knight.Update(gameTime);
+            fairy.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -89,7 +95,9 @@ namespace Project
                         
             player.Draw(spriteBatch);
             mapManager.Draw(spriteBatch);
-            enemy.Draw(spriteBatch);
+            wizard.Draw(spriteBatch);
+            knight.Draw(spriteBatch);
+            fairy.Draw(spriteBatch);
 
             spriteBatch.End();
 
