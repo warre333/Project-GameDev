@@ -27,7 +27,7 @@ namespace Project
 
         static public int tileSize = 16;
 
-        private Player player;
+        public static Player player;
         private List<Enemy> enemies;
         private Enemy wizard;
         private Enemy knight;
@@ -91,7 +91,11 @@ namespace Project
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin(transformMatrix: camera.Transform, sortMode: SpriteSortMode.FrontToBack);
+            spriteBatch.Begin(
+                transformMatrix: camera.Transform, 
+                sortMode: SpriteSortMode.FrontToBack,
+                samplerState: SamplerState.PointClamp
+            );
                         
             player.Draw(spriteBatch);
             mapManager.Draw(spriteBatch);

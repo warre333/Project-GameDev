@@ -30,3 +30,9 @@ Code die ik maakte voor het project voordat ik van idee wisselde herbruik ik hie
 
 ## 0.005
 - Added: Basic enemy class.
+
+## 0.006
+- Added: Wizard
+- Added: Knight
+- Added: Fairy
+- Added: Enemy AI: Walking

@@ -9,8 +9,6 @@ namespace Project.Characters
     public class Player : Character, IInputReadable
     {
         public IInputReader InputReader { get; set; }
-        public Vector2 Size { get; set; }
-        public Vector2 Speed { get; set; }
         private Camera camera;
 
         public Player(Texture2D texture, IInputReader inputReader, Texture2D heartTexture, Camera camera) : base(texture, heartTexture)
@@ -24,7 +22,7 @@ namespace Project.Characters
 
             InputReader = inputReader;
             Position = new Vector2(1, 1);
-            Speed = new Vector2(2, 1) * 2;
+            Speed = new Vector2(4, 3);
             Size = new Vector2(32, 32);
             Health = new Health(10, heartTexture);
 

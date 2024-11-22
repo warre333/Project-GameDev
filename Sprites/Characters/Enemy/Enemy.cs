@@ -12,10 +12,8 @@ using System.Threading.Tasks;
 
 namespace Project.Sprites.Characters.Enemy
 {
-    public class Enemy : Character, IMovable
+    public abstract class Enemy : Character, IMovable
     {
-        public Vector2 Speed { get; set; }
-        public Vector2 Size { get; set; }
 
         public Enemy(Texture2D texture, Texture2D heartTexture) : base(texture, heartTexture)
         {
@@ -40,9 +38,6 @@ namespace Project.Sprites.Characters.Enemy
             base.Update(gameTime);
         }
 
-        private void Move()
-        {
-            MovementManager.Move(this, animationState, new Vector2(0, 0)); // Change direction to AI
-        }
+        abstract internal void Move();
     }
 }

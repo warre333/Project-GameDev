@@ -13,6 +13,8 @@ namespace Project.Characters
         public Texture2D Texture { get; set; }
         public Vector2 Position { get; set; }
         public Health Health { get; set; }
+        public Vector2 Speed { get; set; }
+        public Vector2 Size { get; set; }
 
         public Character(Texture2D texture, Texture2D heartTexture)
         {
