@@ -3,12 +3,24 @@ using Project.States;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
+using Project.Enums;
 
 namespace Project.Managers
 {
     public static class MovementManager
     {
         public static void Move(IMovable movable, AnimationState animationState, Vector2 direction)
+        {
+            MoveSprite(movable, direction);
+            animationState.ChooseAnimation(direction);
+        }
+        public static void Move(IMovable movable, AnimationState animationState, Vector2 direction, out CharacterAnimation animation)
+        {
+            MoveSprite(movable, direction);
+            animationState.ChooseAnimation(direction, out animation);
+        }
+
+        private static void MoveSprite(IMovable movable, Vector2 direction)
         {
             Vector2 distance = direction * movable.Speed;
             Vector2 newPosition = movable.Position + distance;
@@ -22,8 +34,6 @@ namespace Project.Managers
             }
 
             movable.Position += distance;
-
-            animationState.ChooseAnimation(direction);
         }
 
         private static Rectangle GetBoundingBox(IMovable movable, Vector2 position)

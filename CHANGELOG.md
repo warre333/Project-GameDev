@@ -36,3 +36,6 @@ Code die ik maakte voor het project voordat ik van idee wisselde herbruik ik hie
 - Added: Knight
 - Added: Fairy
 - Added: Enemy AI: Walking
+
+## 0.007
+- Added: Weapon class

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project.Interfaces
 {
-    public interface IInputReadable : IMovable
+    public interface IInputReadable
     {
         IInputReader InputReader { get; set; }
     }

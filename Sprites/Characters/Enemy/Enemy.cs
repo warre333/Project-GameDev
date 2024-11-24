@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Project.Characters;
+using Project.Enums;
 using Project.Interfaces;
 using Project.Managers;
 using Project.UI;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Project.Sprites.Characters.Enemy
 {
-    public abstract class Enemy : Character, IMovable
+    public abstract class Enemy : Character
     {
 
         public Enemy(Texture2D texture, Texture2D heartTexture) : base(texture, heartTexture)

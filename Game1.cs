@@ -8,6 +8,7 @@ using System;
 using Project.Tiles;
 using System.Collections.Generic;
 using Project.Sprites.Characters.Enemy;
+using Project.Sprites;
 
 namespace Project
 {
@@ -19,6 +20,7 @@ namespace Project
         Camera camera = new Camera();
 
         private Texture2D playerTexture;
+        private Texture2D swordTexture;
         private Texture2D wizardTexture;
         private Texture2D knightTexture;
         private Texture2D fairyTexture;
@@ -28,6 +30,7 @@ namespace Project
         static public int tileSize = 16;
 
         public static Player player;
+        private Weapon playerSword;
         private List<Enemy> enemies;
         private Enemy wizard;
         private Enemy knight;
@@ -50,6 +53,7 @@ namespace Project
             ScreenManager.Setup(graphics, Window);
 
             player = new Player(playerTexture, new KeyboardReader(), healthTexture, camera);
+            playerSword = new Weapon(swordTexture, player);
             enemies = new List<Enemy>();
             wizard = new Wizard(wizardTexture, healthTexture);
             knight = new Knight(knightTexture, healthTexture);
@@ -62,6 +66,7 @@ namespace Project
 
             // TODO: use this.Content to load your game content here
             playerTexture = Content.Load<Texture2D>("lancelot_");
+            swordTexture = Content.Load<Texture2D>("excalibur_");
             wizardTexture = Content.Load<Texture2D>("merlin_");
             knightTexture = Content.Load<Texture2D>("mordred_");
             fairyTexture = Content.Load<Texture2D>("morganLeFay_");
@@ -80,6 +85,7 @@ namespace Project
 
             camera.Follow(player);
             player.Update(gameTime);
+            playerSword.Update(gameTime);
             wizard.Update(gameTime);
             knight.Update(gameTime);
             fairy.Update(gameTime);
@@ -96,9 +102,10 @@ namespace Project
                 sortMode: SpriteSortMode.FrontToBack,
                 samplerState: SamplerState.PointClamp
             );
+            mapManager.Draw(spriteBatch);
                         
             player.Draw(spriteBatch);
-            mapManager.Draw(spriteBatch);
+            playerSword.Draw(spriteBatch);
             wizard.Draw(spriteBatch);
             knight.Draw(spriteBatch);
             fairy.Draw(spriteBatch);

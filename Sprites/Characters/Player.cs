@@ -3,6 +3,7 @@ using Project.Managers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Project.UI;
+using Project.Enums;
 
 namespace Project.Characters
 {
@@ -42,7 +43,9 @@ namespace Project.Characters
 
         private void Move()
         {
-            MovementManager.Move(this, animationState, InputReader.ReadInput());
+            CharacterAnimation animation;
+            MovementManager.Move(this, animationState, InputReader.ReadInput(), out animation);
+            Direction = animation;
         }
     }
 }

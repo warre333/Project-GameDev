@@ -26,7 +26,6 @@ namespace Project.Sprites.Characters.Enemy
             Vector2 targetPosition = distanceToLeft < distanceToRight ? playerLeft : playerRight;
             Vector2 direction = targetPosition - Position;
 
-            Debug.WriteLine(direction.Length());
             if (direction.Length() < 100)
             {
                 if(direction.Length() < 80)
