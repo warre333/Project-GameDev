@@ -30,7 +30,8 @@ namespace Project.Sprites.Characters.Enemy
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Texture, Position, animationState.GetCurrentFrame().SourceRectangle, Color.White, 0, new Vector2(0, 0), 2f, SpriteEffects.None, 1);
+            spriteBatch.Draw(Texture, Position, animationState.GetCurrentFrame().SourceRectangle, Color.White, 0, new Vector2(0, 0), 2f, SpriteEffects.None, 0.9f);
+            Health.Draw(spriteBatch, new Vector2(Position.X + 16, Position.Y), 16);
         }
 
         public void Update(GameTime gameTime)

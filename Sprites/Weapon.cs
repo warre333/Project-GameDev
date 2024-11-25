@@ -36,7 +36,7 @@ namespace Project.Sprites
         public override void Draw(SpriteBatch spriteBatch)
         {
             if (isVisible)
-                spriteBatch.Draw(Texture, Position, animationState.GetCurrentFrame().SourceRectangle, Color.White, Owner.Direction == CharacterAnimation.WALK_LEFT ? -MathHelper.PiOver4 : MathHelper.PiOver4, new Vector2(0), 2f, SpriteEffects.None, 0.99f);
+                spriteBatch.Draw(Texture, Position, animationState.GetCurrentFrame().SourceRectangle, Color.White, Owner.Direction == CharacterAnimation.WALK_LEFT ? -MathHelper.PiOver4 : MathHelper.PiOver4, new Vector2(0), 2f, SpriteEffects.None, 0.89f);
         }
 
         public void Update(GameTime gameTime)

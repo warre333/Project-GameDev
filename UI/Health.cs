@@ -36,7 +36,7 @@ namespace Project.UI
                     position.Y
                 );
 
-                spriteBatch.Draw(heartTexture, heartPosition, null, Color.White, 0f, Vector2.Zero, new Vector2((float)heartSize / heartTexture.Width), SpriteEffects.None, 0f);
+                spriteBatch.Draw(heartTexture, heartPosition, null, Color.White, 0f, Vector2.Zero, new Vector2((float)heartSize / heartTexture.Width), SpriteEffects.None, 1f);
             }
         }
     }

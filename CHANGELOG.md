@@ -39,3 +39,6 @@ Code die ik maakte voor het project voordat ik van idee wisselde herbruik ik hie
 
 ## 0.007
 - Added: Weapon class
+
+## 0.008
+- Added: display of health from enemies.
