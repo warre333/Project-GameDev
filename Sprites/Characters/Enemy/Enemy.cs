@@ -15,6 +15,7 @@ namespace Project.Sprites.Characters.Enemy
 {
     public abstract class Enemy : Character
     {
+        public int Damage { get; set; }
 
         public Enemy(Texture2D texture, Texture2D heartTexture) : base(texture, heartTexture)
         {
@@ -37,9 +38,11 @@ namespace Project.Sprites.Characters.Enemy
         public void Update(GameTime gameTime)
         {
             Move();
+            Attack(gameTime);
             base.Update(gameTime);
         }
 
         abstract internal void Move();
+        abstract public void Attack(GameTime gameTime);
     }
 }

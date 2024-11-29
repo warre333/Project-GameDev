@@ -13,6 +13,12 @@ namespace Project.Sprites.Characters.Enemy
             Position = new Vector2(-48, 1);
             Speed = new Vector2(1, 1);
             Health = new Health(1, heartTexture);
+            Damage = 0;
+        }
+
+        public override void Attack(GameTime gameTime)
+        {
+            return; // Doet geen damage
         }
 
         internal override void Move()

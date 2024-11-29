@@ -20,17 +20,17 @@ namespace Project
         Camera camera = new Camera();
 
         private Texture2D playerTexture;
-        private Texture2D swordTexture;
         private Texture2D wizardTexture;
         private Texture2D knightTexture;
         private Texture2D fairyTexture;
         private Texture2D healthTexture;
+        static public Texture2D swordTexture;
         static public Texture2D tilesTexture;
 
         static public int tileSize = 16;
 
         public static Player player;
-        private Weapon playerSword;
+        private PlayerSword playerSword;
         public static List<Enemy> enemies;
         private Enemy wizard;
         private Enemy knight;
@@ -53,7 +53,7 @@ namespace Project
             ScreenManager.Setup(graphics, Window);
 
             player = new Player(playerTexture, new KeyboardReader(), healthTexture, camera);
-            playerSword = new Weapon(swordTexture, player);
+            playerSword = new PlayerSword(swordTexture, player);
             enemies = new List<Enemy>();
             enemies.Add(new Wizard(wizardTexture, healthTexture));
             enemies.Add(new Knight(knightTexture, healthTexture));

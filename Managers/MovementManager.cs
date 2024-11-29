@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
 using Project.Enums;
+using Project.Tiles;
 
 namespace Project.Managers
 {
@@ -14,6 +15,7 @@ namespace Project.Managers
             MoveSprite(movable, direction);
             animationState.ChooseAnimation(direction);
         }
+
         public static void Move(IMovable movable, AnimationState animationState, Vector2 direction, out CharacterAnimation animation)
         {
             MoveSprite(movable, direction);
@@ -25,7 +27,7 @@ namespace Project.Managers
             Vector2 distance = direction * movable.Speed;
             Vector2 newPosition = movable.Position + distance;
 
-            foreach (var collidable in Game1.mapManager.GetCurrentMap().Tiles)
+            foreach (Tile collidable in Game1.mapManager.GetCurrentMap().Tiles)
             {
                 if (collidable.GetBoundingBox().Intersects(GetBoundingBox(movable, newPosition)))
                 {

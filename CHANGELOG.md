@@ -46,3 +46,9 @@ Code die ik maakte voor het project voordat ik van idee wisselde herbruik ik hie
 ## 0.009
 - Added: Player attack
 - Added: Deal damage to enemies
+
+## 0.010
+- Added: Knight attack
+- Changed: Weapon class to handle different types of weapons.
+- Added: Sword class for knight and player.
+- Summary: The player can now attack and deal damage to enemies. The knight can attack and deal damage to the player.

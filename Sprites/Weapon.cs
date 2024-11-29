@@ -8,27 +8,21 @@ using Project.Sprites.Characters.Enemy;
 
 namespace Project.Sprites
 {
-    public class Weapon : Sprite, ICollidable, IInputReadable
+    public abstract class Weapon : Sprite, ICollidable, IInputReadable
     {
         public int Damage { get; set; }
         public Character Owner { get; set; }
         public IInputReader InputReader { get; set; }
 
-        private bool isVisible;
-        private double attackTimer;
-        private double attackTime;
-        private bool hasAttacked;
+        protected bool isVisible;
+        protected double attackTimer;
+        protected double attackTime;
+        protected bool hasAttacked;
 
         public Weapon(Texture2D texture, Character owner) : base(texture)
         {
-            animationState.AddAnimation(CharacterAnimation.IDLE, 128, 128, 4, 4, 0, 0, 1);
-            animationState.AddAnimation(CharacterAnimation.ATTACKING_RIGHT, 128, 128, 4, 4, 4, 7, 4);
-            animationState.AddAnimation(CharacterAnimation.ATTACKING_LEFT, 128, 128, 4, 4, 8, 11, 4);
-            animationState.PlayAnimation(CharacterAnimation.IDLE);
-
             Owner = owner;
             Position = Owner.Position;
-            Damage = 1;
             isVisible = false;
             attackTimer = 0;
             attackTime = 1;
@@ -44,14 +38,6 @@ namespace Project.Sprites
         public void Update(GameTime gameTime)
         {
             Follow();
-
-            if (MouseReader.IsLeftMouseClicked() || isVisible)
-            {
-                AttackAnimation(gameTime);
-
-                if(!hasAttacked)
-                    DealDamage();
-            }
 
             base.Update(gameTime);
         }
@@ -78,7 +64,7 @@ namespace Project.Sprites
             return Owner.Direction == CharacterAnimation.WALK_LEFT ? CharacterAnimation.ATTACKING_LEFT : CharacterAnimation.ATTACKING_RIGHT;
         }
 
-        private void AttackAnimation(GameTime gameTime)
+        protected void AttackAnimation(GameTime gameTime)
         {
             if (attackTimer == 0)
             {
@@ -100,16 +86,6 @@ namespace Project.Sprites
             }
         }
 
-        private void DealDamage()
-        {
-            hasAttacked = true;
-            foreach (Enemy enemy in Game1.enemies)
-            {
-                if (GetBoundingBox().Intersects(enemy.GetBoundingBox()))
-                {
-                    enemy.Health.TakeDamage(Damage);
-                }
-            }
-        }
+        protected abstract void DealDamage();
     }
 }
