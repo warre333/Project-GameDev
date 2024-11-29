@@ -4,7 +4,7 @@ using Project.Characters;
 using Project.Enums;
 using Project.Inputs;
 using Project.Interfaces;
-using System.Diagnostics;
+using Project.Sprites.Characters.Enemy;
 
 namespace Project.Sprites
 {
@@ -17,6 +17,7 @@ namespace Project.Sprites
         private bool isVisible;
         private double attackTimer;
         private double attackTime;
+        private bool hasAttacked;
 
         public Weapon(Texture2D texture, Character owner) : base(texture)
         {
@@ -31,6 +32,7 @@ namespace Project.Sprites
             isVisible = false;
             attackTimer = 0;
             attackTime = 1;
+            hasAttacked = false;
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -45,23 +47,10 @@ namespace Project.Sprites
 
             if (MouseReader.IsLeftMouseClicked() || isVisible)
             {
-                if (attackTimer == 0)
-                {
+                AttackAnimation(gameTime);
 
-                    isVisible = true;
-                    animationState.PlayAnimation(GetAttackingDirection());
-                    attackTimer += gameTime.ElapsedGameTime.TotalSeconds;
-                } else
-                {
-                    attackTimer += gameTime.ElapsedGameTime.TotalSeconds;
-                    if(attackTimer >= attackTime)
-                    {
-                        attackTimer = 0;
-                        isVisible = false;
-                        animationState.PlayAnimation(CharacterAnimation.IDLE);
-                    } 
-                }
-                
+                if(!hasAttacked)
+                    DealDamage();
             }
 
             base.Update(gameTime);
@@ -87,6 +76,40 @@ namespace Project.Sprites
         private CharacterAnimation GetAttackingDirection()
         {
             return Owner.Direction == CharacterAnimation.WALK_LEFT ? CharacterAnimation.ATTACKING_LEFT : CharacterAnimation.ATTACKING_RIGHT;
+        }
+
+        private void AttackAnimation(GameTime gameTime)
+        {
+            if (attackTimer == 0)
+            {
+
+                isVisible = true;
+                animationState.PlayAnimation(GetAttackingDirection());
+                attackTimer += gameTime.ElapsedGameTime.TotalSeconds;
+                hasAttacked = false;
+            }
+            else
+            {
+                attackTimer += gameTime.ElapsedGameTime.TotalSeconds;
+                if (attackTimer >= attackTime)
+                {
+                    attackTimer = 0;
+                    isVisible = false;
+                    animationState.PlayAnimation(CharacterAnimation.IDLE);
+                }
+            }
+        }
+
+        private void DealDamage()
+        {
+            hasAttacked = true;
+            foreach (Enemy enemy in Game1.enemies)
+            {
+                if (GetBoundingBox().Intersects(enemy.GetBoundingBox()))
+                {
+                    enemy.Health.TakeDamage(Damage);
+                }
+            }
         }
     }
 }

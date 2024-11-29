@@ -42,3 +42,7 @@ Code die ik maakte voor het project voordat ik van idee wisselde herbruik ik hie
 
 ## 0.008
 - Added: display of health from enemies.
+
+## 0.009
+- Added: Player attack
+- Added: Deal damage to enemies

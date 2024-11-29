@@ -31,7 +31,7 @@ namespace Project
 
         public static Player player;
         private Weapon playerSword;
-        private List<Enemy> enemies;
+        public static List<Enemy> enemies;
         private Enemy wizard;
         private Enemy knight;
         private Enemy fairy;
@@ -55,9 +55,9 @@ namespace Project
             player = new Player(playerTexture, new KeyboardReader(), healthTexture, camera);
             playerSword = new Weapon(swordTexture, player);
             enemies = new List<Enemy>();
-            wizard = new Wizard(wizardTexture, healthTexture);
-            knight = new Knight(knightTexture, healthTexture);
-            fairy = new Fairy(fairyTexture, healthTexture);
+            enemies.Add(new Wizard(wizardTexture, healthTexture));
+            enemies.Add(new Knight(knightTexture, healthTexture));
+            enemies.Add(new Fairy(fairyTexture, healthTexture));
         }
 
         protected override void LoadContent()
@@ -86,9 +86,11 @@ namespace Project
             camera.Follow(player);
             player.Update(gameTime);
             playerSword.Update(gameTime);
-            wizard.Update(gameTime);
-            knight.Update(gameTime);
-            fairy.Update(gameTime);
+
+            foreach (Enemy enemy in enemies)
+            {
+                enemy.Update(gameTime);
+            }
 
             base.Update(gameTime);
         }
@@ -106,9 +108,11 @@ namespace Project
                         
             player.Draw(spriteBatch);
             playerSword.Draw(spriteBatch);
-            wizard.Draw(spriteBatch);
-            knight.Draw(spriteBatch);
-            fairy.Draw(spriteBatch);
+
+            foreach (Enemy enemy in enemies)
+            {
+                enemy.Draw(spriteBatch);
+            } 
 
             spriteBatch.End();
 
