@@ -57,3 +57,7 @@ Code die ik maakte voor het project voordat ik van idee wisselde herbruik ik hie
 - Added: Wizard attack
     - Wizard shoots fireballs at the player.
 - Fix: character boundingbox
+
+## 0.012
+- Fix: No more invisible tile in the middle.
+- Added: Acceleration and deceleration for the player.
