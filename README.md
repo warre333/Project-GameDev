@@ -14,7 +14,7 @@ Dungeon game, a player can walk around in a automatic generated map. Monsters sp
 - [x] Health system
 - [x] Enemies 
 - [x] Attack system (Player)
-- [ ] Attack system (Enemy)
+- [x] Attack system (Enemy)
 - [x] Enemy AI: Walking
 - [ ] Acceleration and deceleration
 - [ ] Collision detection (Enemies)

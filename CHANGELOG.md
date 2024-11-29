@@ -52,3 +52,8 @@ Code die ik maakte voor het project voordat ik van idee wisselde herbruik ik hie
 - Changed: Weapon class to handle different types of weapons.
 - Added: Sword class for knight and player.
 - Summary: The player can now attack and deal damage to enemies. The knight can attack and deal damage to the player.
+
+## 0.011
+- Added: Wizard attack
+    - Wizard shoots fireballs at the player.
+- Fix: character boundingbox

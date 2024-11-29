@@ -31,7 +31,7 @@ namespace Project.Characters
         }
         override public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Texture, Position, animationState.GetCurrentFrame().SourceRectangle, Color.White, 0, new Vector2(0, 0), 2f, SpriteEffects.None, 0.9f);
+            spriteBatch.Draw(Texture, Position, animationState.GetCurrentFrame().SourceRectangle, Color.White, 0, Vector2.Zero, new Vector2(2, 2), SpriteEffects.None, 0.9f);
             Health.Draw(spriteBatch, new Vector2(-camera.Transform.Translation.X + 10, -camera.Transform.Translation.Y + 10), 32);
         }
 

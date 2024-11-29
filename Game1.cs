@@ -25,6 +25,7 @@ namespace Project
         private Texture2D fairyTexture;
         private Texture2D healthTexture;
         static public Texture2D swordTexture;
+        static public Texture2D fireballTexture;
         static public Texture2D tilesTexture;
 
         static public int tileSize = 16;
@@ -32,9 +33,6 @@ namespace Project
         public static Player player;
         private PlayerSword playerSword;
         public static List<Enemy> enemies;
-        private Enemy wizard;
-        private Enemy knight;
-        private Enemy fairy;
         public static MapManager mapManager = new MapManager();
 
         public Game1()
@@ -46,8 +44,6 @@ namespace Project
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
             base.Initialize();
 
             ScreenManager.Setup(graphics, Window);
@@ -64,10 +60,10 @@ namespace Project
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
             playerTexture = Content.Load<Texture2D>("lancelot_");
             swordTexture = Content.Load<Texture2D>("excalibur_");
-            wizardTexture = Content.Load<Texture2D>("merlin_");
+            fireballTexture = Content.Load<Texture2D>("FB001");
+            wizardTexture = Content.Load<Texture2D>("merlin_"); 
             knightTexture = Content.Load<Texture2D>("mordred_");
             fairyTexture = Content.Load<Texture2D>("morganLeFay_");
             healthTexture = Content.Load<Texture2D>("heart");
@@ -81,15 +77,27 @@ namespace Project
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
-
             camera.Follow(player);
             player.Update(gameTime);
             playerSword.Update(gameTime);
 
             foreach (Enemy enemy in enemies)
             {
-                enemy.Update(gameTime);
+                switch(enemy)
+                {
+                    case Wizard wizard:
+                        wizard.Update(gameTime);
+                        break;
+                    case Knight knight:
+                        knight.Update(gameTime);
+                        break;
+                    case Fairy fairy:
+                        fairy.Update(gameTime);
+                        break;
+                    default:
+                        enemy.Update(gameTime);
+                        break;
+                }
             }
 
             base.Update(gameTime);
@@ -111,8 +119,22 @@ namespace Project
 
             foreach (Enemy enemy in enemies)
             {
-                enemy.Draw(spriteBatch);
-            } 
+                switch (enemy)
+                {
+                    case Wizard wizard:
+                        wizard.Draw(spriteBatch);
+                        break;
+                    case Knight knight:
+                        knight.Draw(spriteBatch);
+                        break;
+                    case Fairy fairy:
+                        fairy.Draw(spriteBatch);
+                        break;
+                    default:
+                        enemy.Draw(spriteBatch);
+                        break;
+                }
+            }
 
             spriteBatch.End();
 

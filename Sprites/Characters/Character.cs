@@ -22,7 +22,22 @@ namespace Project.Characters
 
         public Rectangle GetBoundingBox()
         {
-            return new Rectangle((int)Position.X, (int)Position.Y, 32, 32);
+            float scale = 2f;
+
+            AnimationFrame currentFrame = animationState.GetCurrentFrame();
+
+            int width = (int)(currentFrame.SourceRectangle.Width * scale);
+            int height = (int)(currentFrame.SourceRectangle.Height * scale);
+
+            int offsetX = 8;
+            int offsetY = 16;
+
+            return new Rectangle(
+                (int)Position.X + offsetX,
+                (int)Position.Y + offsetY,
+                width - 24,
+                height -20
+            );
         }
     }
 }

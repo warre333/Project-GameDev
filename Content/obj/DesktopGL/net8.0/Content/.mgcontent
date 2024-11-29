@@ -8,6 +8,7 @@
     <File>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/Dungeon tileset.png</File>
     <File>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/dust_.png</File>
     <File>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/excalibur_.png</File>
+    <File>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/FB001.png</File>
     <File>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/lancelot_.png</File>
     <File>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/merlin_.png</File>
     <File>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/mordred_.png</File>
@@ -15,6 +16,7 @@
   </SourceFiles>
   <DestFiles>
     <File>heart.png</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
