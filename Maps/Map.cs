@@ -2,7 +2,6 @@
 using Microsoft.Xna.Framework.Graphics;
 using Project.Tiles;
 using Project.Enums;
-using System;
 
 namespace Project.Maps
 {
@@ -11,6 +10,11 @@ namespace Project.Maps
         public Tile[,] Tiles { get; set; }
         private TileFactory tileFactory;
         private int tileSize = 32;
+        public Vector2 MidOfMap { get
+            {
+                return new Vector2(Tiles.GetLength(0) * tileSize / 2 - 32, Tiles.GetLength(1) * tileSize / 2 - 32);
+            }
+        }
 
         public Map(int[,] layout)
         {
@@ -26,8 +30,7 @@ namespace Project.Maps
                 for (int y = 0; y < layout.GetLength(0); y++)
                 {
                     TileType type = (TileType)layout[y, x];
-                    Tiles[x, y] = tileFactory.Add(type, x * tileSize - layout.GetLength(1) * tileSize / 2 + 32, y * tileSize - layout.GetLength(0) * tileSize / 2 + 32);
-                
+                    Tiles[x, y] = tileFactory.Add(type, x * tileSize, y * tileSize);
                 }
             }
         }

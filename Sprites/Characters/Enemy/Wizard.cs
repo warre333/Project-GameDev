@@ -15,7 +15,7 @@ namespace Project.Sprites.Characters.Enemy
         private double timer;
         public Wizard(Texture2D texture, Texture2D heartTexture) : base(texture, heartTexture)
         {
-            Position = new Vector2(100, 100);
+            Position = Game1.mapManager.GetCurrentMap().MidOfMap;
             Speed = new Vector2(1, 1);
             Health = new Health(2, heartTexture);
             Damage = 1;
