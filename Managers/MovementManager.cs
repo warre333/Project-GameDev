@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Project.Enums;
 using Project.Tiles;
 using Project.Characters;
+using Project.Scenes;
 
 namespace Project.Managers
 {
@@ -34,7 +35,7 @@ namespace Project.Managers
             Vector2 distance = direction * movable.Speed;
             Vector2 newPosition = movable.Position + distance;
 
-            foreach (Tile collidable in Game1.mapManager.GetCurrentMap().Tiles)
+            foreach (Tile collidable in GameScene.mapManager.GetCurrentMap().Tiles)
             {
                 if (collidable.GetBoundingBox().Intersects(GetBoundingBox(movable, newPosition)))
                 {
@@ -74,7 +75,7 @@ namespace Project.Managers
 
             Vector2 newPosition = player.Position + player.Velocity;
 
-            foreach (Tile collidable in Game1.mapManager.GetCurrentMap().Tiles)
+            foreach (Tile collidable in GameScene.mapManager.GetCurrentMap().Tiles)
             {
                 if (collidable.GetBoundingBox().Intersects(GetBoundingBox(player, newPosition)))
                 {

@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Project.UI;
 using Project.Enums;
+using Project.Scenes;
 
 namespace Project.Characters
 {
@@ -23,7 +24,7 @@ namespace Project.Characters
             animationState.PlayAnimation(CharacterAnimation.IDLE);
 
             InputReader = inputReader;
-            Position = Game1.mapManager.GetCurrentMap().MidOfMap;
+            Position = GameScene.mapManager.GetCurrentMap().MidOfMap; 
             Speed = new Vector2(3, 1.5f);
             Size = new Vector2(32, 32);
             Health = new Health(10, heartTexture);

@@ -51,6 +51,9 @@ namespace Project.Managers
 
         public Map GetCurrentMap()
         {
+            if(MapNumber > Maps.Count)
+                return null;
+
             return Maps[MapNumber - 1];
         }
 

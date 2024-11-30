@@ -4,6 +4,7 @@ using Project.Characters;
 using Project.Enums;
 using Project.Interfaces;
 using Project.Managers;
+using Project.Scenes;
 using Project.UI;
 using System;
 using System.Diagnostics;
@@ -15,11 +16,11 @@ namespace Project.Sprites.Characters.Enemy
         private KnightSword weapon;
         public Knight(Texture2D texture, Texture2D heartTexture) : base(texture, heartTexture)
         {
-            Position = Game1.mapManager.GetCurrentMap().MidOfMap;
+            Position = GameScene.mapManager.GetCurrentMap().MidOfMap; 
             Speed = new Vector2(2, 1);
             Health = new Health(3, heartTexture);
             Damage = 1;
-            weapon = new KnightSword(Game1.swordTexture, this);
+            weapon = new KnightSword(GameScene.swordTexture, this);
         }
 
         public override void Attack(GameTime gameTime)
@@ -29,8 +30,8 @@ namespace Project.Sprites.Characters.Enemy
 
         internal override void Move()
         {
-            Vector2 playerLeft = Game1.player.Position - new Vector2(Game1.player.Size.X, 0);
-            Vector2 playerRight = Game1.player.Position + new Vector2(Game1.player.Size.X, 0);
+            Vector2 playerLeft = GameScene.player.Position - new Vector2(GameScene.player.Size.X, 0);
+            Vector2 playerRight = GameScene.player.Position + new Vector2(GameScene.player.Size.X, 0);
 
             float distanceToLeft = Vector2.Distance(Position, playerLeft);
             float distanceToRight = Vector2.Distance(Position, playerRight);

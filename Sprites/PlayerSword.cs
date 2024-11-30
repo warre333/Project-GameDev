@@ -4,6 +4,7 @@ using Project.Characters;
 using Project.Enums;
 using Project.Inputs;
 using Project.Interfaces;
+using Project.Scenes;
 using Project.Sprites.Characters.Enemy;
 
 namespace Project.Sprites
@@ -43,7 +44,7 @@ namespace Project.Sprites
         override protected void DealDamage()
         {
             hasAttacked = true;
-            foreach (Enemy enemy in Game1.enemies)
+            foreach (Enemy enemy in GameScene.enemies)
             {
                 if (GetBoundingBox().Intersects(enemy.GetBoundingBox()))
                 {

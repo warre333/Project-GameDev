@@ -25,6 +25,13 @@
 /processorParam:TextureFormat=Color
 /build:../assets/heart.png;heart.png
 
+#begin BokorFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:BokorFont.spritefont
+
 #begin Dungeon tileset.png
 /importer:TextureImporter
 /processor:TextureProcessor

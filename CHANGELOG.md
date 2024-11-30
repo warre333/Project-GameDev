@@ -61,3 +61,10 @@ Code die ik maakte voor het project voordat ik van idee wisselde herbruik ik hie
 ## 0.012
 - Fix: No more invisible tile in the middle.
 - Added: Acceleration and deceleration for the player.
+
+## 0.013
+- Fix: started using scenes.
+- Added: Scene class to handle different scenes.
+- Added: StartScene
+- Added: GameScene
+- Added: SceneManager to handle the current scene.

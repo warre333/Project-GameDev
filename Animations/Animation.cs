@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Authentication;
 using Microsoft.Xna.Framework;
 
 namespace Project.Animations
@@ -9,7 +10,7 @@ namespace Project.Animations
         public AnimationFrame CurrentFrame { get; set; }
         private List<AnimationFrame> frames;
         private int counter;
-        private double tickCounter = 0;
+        private double tickCounter;
         private int fps;
 
 
@@ -17,6 +18,8 @@ namespace Project.Animations
         {
             frames = new List<AnimationFrame>();
             this.fps = fps;
+            counter = 0;
+            tickCounter = 0;
         }
 
         public void Update(GameTime gameTime)
@@ -50,6 +53,8 @@ namespace Project.Animations
                     new Rectangle(x * widthOfFrame, y * heightOfFrame, widthOfFrame, heightOfFrame)
                 ));
             }
+
+            CurrentFrame = frames[0];
         }
     }
 }

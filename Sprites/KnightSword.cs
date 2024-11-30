@@ -4,6 +4,7 @@ using Project.Characters;
 using Project.Enums;
 using Project.Inputs;
 using Project.Interfaces;
+using Project.Scenes;
 using Project.Sprites.Characters.Enemy;
 using System.Diagnostics;
 
@@ -23,8 +24,7 @@ namespace Project.Sprites
 
         public void Update(GameTime gameTime)
         {
-            Debug.WriteLine($"Distance: {Vector2.Distance(Game1.player.Position, Owner.Position)}");
-            if (Vector2.Distance(Game1.player.Position, Owner.Position) < 40 || isVisible)
+            if (Vector2.Distance(GameScene.player.Position, Owner.Position) < 40 || isVisible)
             {
                 AttackAnimation(gameTime);
 
@@ -38,9 +38,9 @@ namespace Project.Sprites
         {
             hasAttacked = true;
 
-            if (GetBoundingBox().Intersects(Game1.player.GetBoundingBox()))
+            if (GetBoundingBox().Intersects(GameScene.player.GetBoundingBox()))
             {
-                Game1.player.Health.TakeDamage(Damage);
+                GameScene.player.Health.TakeDamage(Damage);
             }
         }
     }

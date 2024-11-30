@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/BokorFont.spritefont</SourceFile>
+  <SourceTime>2024-12-01T00:00:32.1610254+01:00</SourceTime>
+  <DestFile>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/bin/DesktopGL/Content/BokorFont.xnb</DestFile>
+  <DestTime>2024-12-01T00:00:37.8176144+01:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2024-08-16T19:05:56+02:00</ProcessorTime>
+  <Parameters>
+    <Key>PremultiplyAlpha</Key>
+    <Value>True</Value>
+  </Parameters>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

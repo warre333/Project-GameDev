@@ -1,6 +1,7 @@
 using Project.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Project.Scenes;
 
 namespace Project.Tiles
 {
@@ -17,7 +18,7 @@ namespace Project.Tiles
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Game1.tilesTexture, Position, SourceRectangle, Color.White, 0, new Vector2(0, 0), 2f, SpriteEffects.None, 0);
+            spriteBatch.Draw(GameScene.tilesTexture, Position, SourceRectangle, Color.White, 0, new Vector2(0, 0), 2f, SpriteEffects.None, 0);
         }
 
         public Rectangle GetBoundingBox()

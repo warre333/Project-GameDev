@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Project.Enums;
 using Project.Managers;
+using Project.Scenes;
 using Project.UI;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Project.Sprites.Characters.Enemy
         private double timer;
         public Wizard(Texture2D texture, Texture2D heartTexture) : base(texture, heartTexture)
         {
-            Position = Game1.mapManager.GetCurrentMap().MidOfMap;
+            Position = GameScene.mapManager.GetCurrentMap().MidOfMap; 
             Speed = new Vector2(1, 1);
             Health = new Health(2, heartTexture);
             Damage = 1;
@@ -27,7 +28,7 @@ namespace Project.Sprites.Characters.Enemy
             timer += gameTime.ElapsedGameTime.TotalSeconds;
             if (timer >= 1)
             {
-                Vector2 fireballDirection = Game1.player.Position - Position;
+                Vector2 fireballDirection = GameScene.player.Position - Position;
                 fireballDirection.Normalize();
 
                 Vector2 fireballPosition = Position + fireballDirection * 16;
@@ -35,7 +36,7 @@ namespace Project.Sprites.Characters.Enemy
 
                 fireballDirection.Normalize();
 
-                var fireball = new Fireball(Game1.fireballTexture, fireballPosition, fireballDirection);
+                var fireball = new Fireball(GameScene.fireballTexture, fireballPosition, fireballDirection);
                 Fireballs.Add(fireball);
 
                 timer = 0;
@@ -45,8 +46,8 @@ namespace Project.Sprites.Characters.Enemy
 
         internal override void Move()
         {
-            Vector2 playerLeft = Game1.player.Position - new Vector2(Game1.player.Size.X, 0);
-            Vector2 playerRight = Game1.player.Position + new Vector2(Game1.player.Size.X, 0);
+            Vector2 playerLeft = GameScene.player.Position - new Vector2(GameScene.player.Size.X, 0);
+            Vector2 playerRight = GameScene.player.Position + new Vector2(GameScene.player.Size.X, 0);
 
             float distanceToLeft = Vector2.Distance(Position, playerLeft);
             float distanceToRight = Vector2.Distance(Position, playerRight);
@@ -80,10 +81,10 @@ namespace Project.Sprites.Characters.Enemy
             {
                 fireball.Update(gameTime);
 
-                if (fireball.IsActive && fireball.GetBoundingBox().Intersects(Game1.player.GetBoundingBox()))
+                if (fireball.IsActive && fireball.GetBoundingBox().Intersects(GameScene.player.GetBoundingBox()))
                 {
-                    fireball.OnCollide(Game1.player);
-                    Game1.player.Health.TakeDamage(fireball.Damage);
+                    fireball.OnCollide(GameScene.player);
+                    GameScene.player.Health.TakeDamage(fireball.Damage);
                 }
             }
 
