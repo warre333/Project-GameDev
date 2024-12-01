@@ -32,7 +32,7 @@ namespace Project.Sprites
         public override void Draw(SpriteBatch spriteBatch)
         {
             if (isVisible)
-                spriteBatch.Draw(Texture, Position, animationState.GetCurrentFrame().SourceRectangle, Color.White, Owner.Direction == CharacterAnimation.WALK_LEFT ? -MathHelper.PiOver4 : MathHelper.PiOver4, new Vector2(0), 2f, SpriteEffects.None, 0.89f);
+                spriteBatch.Draw(Texture, Position, animationState.GetCurrentFrame().SourceRectangle, Color.White, Owner.Direction == CharacterAnimation.WALK_LEFT ? -MathHelper.PiOver4 : MathHelper.PiOver4, new Vector2(0), Size / 16, SpriteEffects.None, 0.89f);
         }
 
         public void Update(GameTime gameTime)
@@ -44,10 +44,10 @@ namespace Project.Sprites
 
         public Rectangle GetBoundingBox()
         {
-            return new Rectangle((int)Position.X, (int)Position.Y, 32, 32);
+            return new Rectangle((int)Position.X, (int)Position.Y, (int)Size.X, (int)Size.Y);
         }
 
-        private void Follow()
+        protected virtual void Follow()
         {
             if (Owner.Direction == CharacterAnimation.WALK_LEFT)
             {

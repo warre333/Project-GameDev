@@ -26,7 +26,6 @@ namespace Project.Characters
             InputReader = inputReader;
             Position = GameScene.mapManager.GetCurrentMap().MidOfMap; 
             Speed = new Vector2(3, 1.5f);
-            Size = new Vector2(32, 32);
             Health = new Health(10, heartTexture);
             Velocity = Vector2.Zero;
 
@@ -34,7 +33,7 @@ namespace Project.Characters
         }
         override public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Texture, Position, animationState.GetCurrentFrame().SourceRectangle, Color.White, 0, Vector2.Zero, new Vector2(2, 2), SpriteEffects.None, 0.9f);
+            spriteBatch.Draw(Texture, Position, animationState.GetCurrentFrame().SourceRectangle, Color.White, 0, Vector2.Zero, Size / 16, SpriteEffects.None, 0.9f);
             Health.Draw(spriteBatch, new Vector2(-camera.Transform.Translation.X + 10, -camera.Transform.Translation.Y + 10), 32);
         }
 

@@ -20,6 +20,7 @@ namespace Project.Sprites
             animationState.PlayAnimation(CharacterAnimation.IDLE);
 
             Damage = 1;
+            Size = new Vector2(24, 24);
         }
 
         public void Update(GameTime gameTime)
@@ -34,6 +35,7 @@ namespace Project.Sprites
 
             base.Update(gameTime);
         }
+
         override protected void DealDamage()
         {
             hasAttacked = true;
@@ -41,6 +43,18 @@ namespace Project.Sprites
             if (GetBoundingBox().Intersects(GameScene.player.GetBoundingBox()))
             {
                 GameScene.player.Health.TakeDamage(Damage);
+            }
+        }
+
+        override protected void Follow()
+        {
+            if (Owner.Direction == CharacterAnimation.WALK_LEFT)
+            {
+                Position = Owner.Position + new Vector2(-22, 36);
+            }
+            else
+            {
+                Position = Owner.Position + new Vector2(54, 0);
             }
         }
     }

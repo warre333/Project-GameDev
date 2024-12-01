@@ -68,3 +68,6 @@ Code die ik maakte voor het project voordat ik van idee wisselde herbruik ik hie
 - Added: StartScene
 - Added: GameScene
 - Added: SceneManager to handle the current scene.
+
+## 0.014
+- Fix: scaling of the sprites.

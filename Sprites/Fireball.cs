@@ -13,6 +13,7 @@ namespace Project.Sprites
         public bool IsActive { get; set; }
 
         private float rotation;
+        private Texture2D debug;
 
         public Fireball(Texture2D texture, Vector2 position, Vector2 direction) : base(texture)
         {
@@ -23,28 +24,30 @@ namespace Project.Sprites
             IsActive = true; 
             
             rotation = (float)Math.Atan2(direction.Y, direction.X);
+
+            Size = new Vector2(Texture.Bounds.Width / 3f, Texture.Bounds.Width / 3f);
+            debug = new Texture2D(texture.GraphicsDevice, 1, 1);
+            debug.SetData(new[] { Color.Red });
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             if (IsActive)
-                spriteBatch.Draw(Texture, Position, null, Color.White, rotation, new Vector2(Texture.Width / 2, Texture.Height / 2), 1f, SpriteEffects.None, 0.8f);
-        }
+                spriteBatch.Draw(Texture, Position, null, Color.White, rotation, new Vector2(Texture.Width / 2, Texture.Height / 2), Size / 16, SpriteEffects.None, 0.8f);
+        
+            spriteBatch.Draw(debug, GetBoundingBox(), null, Color.Red, 0f, Vector2.Zero, SpriteEffects.None, 1);}
 
         public void Update(GameTime gameTime)
         {
             if (IsActive)
             {
                 Position += Direction * Speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-
-                //if (Position.X < 0 || Position.X > 1920 || Position.Y < 0 || Position.Y > 1080)
-                //    IsActive = false;
             }
         }
 
         public Rectangle GetBoundingBox()
         {
-            return new Rectangle((int)Position.X - Texture.Width / 2, (int)Position.Y - Texture.Height / 2, Texture.Width, Texture.Height);
+            return new Rectangle((int)Position.X, (int)Position.Y, (int)Size.X, (int)Size.Y);
         }
 
         public void OnCollide(ICollidable collidable)

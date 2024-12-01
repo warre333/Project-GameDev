@@ -18,6 +18,7 @@ namespace Project.Sprites
         {
             animationState = new AnimationState();
             Texture = texture;
+            Size = new Vector2(32, 32);
         }
 
         abstract public void Draw(SpriteBatch spriteBatch);

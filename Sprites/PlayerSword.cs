@@ -36,11 +36,6 @@ namespace Project.Sprites
             base.Update(gameTime);
         }
 
-        public Rectangle GetBoundingBox()
-        {
-            return new Rectangle((int)Position.X, (int)Position.Y, 32, 32);
-        }
-
         override protected void DealDamage()
         {
             hasAttacked = true;

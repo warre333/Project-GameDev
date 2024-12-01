@@ -25,14 +25,13 @@ namespace Project.Sprites.Characters.Enemy
             animationState.AddAnimation(CharacterAnimation.WALK_UP, 256, 320, 8, 10, 71, 71, 8);
             animationState.AddAnimation(CharacterAnimation.WALK_DOWN, 256, 320, 8, 10, 71, 71, 8);
             animationState.PlayAnimation(CharacterAnimation.IDLE);
-
-            Size = new Vector2(32, 32);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Texture, Position, animationState.GetCurrentFrame().SourceRectangle, Color.White, 0, new Vector2(0, 0), 2f, SpriteEffects.None, 0.9f);
+            spriteBatch.Draw(Texture, Position, animationState.GetCurrentFrame().SourceRectangle, Color.White, 0, new Vector2(0, 0), Size / 16, SpriteEffects.None, 0.9f);
             Health.Draw(spriteBatch, new Vector2(Position.X + 16, Position.Y), 16);
+
         }
 
         public void Update(GameTime gameTime)
