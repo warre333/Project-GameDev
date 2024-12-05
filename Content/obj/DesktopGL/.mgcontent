@@ -14,6 +14,7 @@
     <File>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/merlin_.png</File>
     <File>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/mordred_.png</File>
     <File>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/morganLeFay_.png</File>
+    <File>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/SigmarFont.spritefont</File>
     <File>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/UI/Easy/Easy1.png</File>
     <File>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/UI/Easy/Easy2.png</File>
     <File>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/UI/Easy/Easy3.png</File>
@@ -38,6 +39,7 @@
   </SourceFiles>
   <DestFiles>
     <File>heart.png</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

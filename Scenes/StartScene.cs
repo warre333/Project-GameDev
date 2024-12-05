@@ -6,7 +6,7 @@ using Project.UI;
 
 namespace Project.Scenes
 {
-    public class StartScreen : Scene
+    public class StartScene : Scene
     {
         private Texture2D easyPlayButtonTexture;
         private Texture2D normalPlayButtonTexture;
@@ -19,7 +19,7 @@ namespace Project.Scenes
         private StartSceneButton hardPlayButton;
         private StartSceneButton exitButton;
 
-        public StartScreen(Game1 game) : base(game) { }
+        public StartScene(Game1 game) : base(game) { }
 
         public override void LoadContent()
         {

@@ -128,6 +128,13 @@
 /processorParam:TextureFormat=Color
 /build:morganLeFay_.png
 
+#begin SigmarFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:SigmarFont.spritefont
+
 #begin UI/Easy/Easy1.png
 /importer:TextureImporter
 /processor:TextureProcessor

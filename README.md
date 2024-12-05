@@ -21,4 +21,4 @@ Dungeon game, a player can walk around in a automatic generated map. Monsters sp
 - [ ] Key and door system
 - [ ] Level & difficulty system
 - [x] Start screen
-- [ ] Game over screen
+- [x] Game over screen

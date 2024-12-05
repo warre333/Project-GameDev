@@ -74,3 +74,6 @@ Code die ik maakte voor het project voordat ik van idee wisselde herbruik ik hie
 
 ## 0.015
 - Added: Start screen buttons
+
+## 0.016
+- Added: Game over screen

@@ -33,10 +33,11 @@ namespace Project
 
             SceneManager = new SceneManager();
 
-            SceneManager.AddScene(SceneType.MainMenu, new StartScreen(this));
+            SceneManager.AddScene(SceneType.MainMenu, new StartScene(this));
             SceneManager.AddScene(SceneType.Game, new GameScene(this));
+            SceneManager.AddScene(SceneType.GameOver, new GameOverScene(this));
 
-            SceneManager.SetScene(SceneType.MainMenu);
+            SceneManager.SetScene(SceneType.GameOver);
 
             base.Initialize();
 
