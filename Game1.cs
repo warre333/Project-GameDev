@@ -29,6 +29,8 @@ namespace Project
 
         protected override void Initialize()
         {
+            ScreenManager.Setup(graphics, Window);
+
             SceneManager = new SceneManager();
 
             SceneManager.AddScene(SceneType.MainMenu, new StartScreen(this));
@@ -38,7 +40,6 @@ namespace Project
 
             base.Initialize();
 
-            ScreenManager.Setup(graphics, Window);
         }
 
         protected override void LoadContent()
@@ -51,10 +52,6 @@ namespace Project
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 SceneManager.SetScene(SceneType.MainMenu);
 
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                if(SceneManager.CurrentScene == SceneManager.Scenes[SceneType.MainMenu])
-                    Exit();
-
             SceneManager.Update(gameTime);
 
             base.Update(gameTime);
@@ -62,7 +59,7 @@ namespace Project
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Gray);
 
             SceneManager.Draw(spriteBatch);
             

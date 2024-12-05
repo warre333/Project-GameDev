@@ -13,7 +13,6 @@ namespace Project.Sprites
         public bool IsActive { get; set; }
 
         private float rotation;
-        private Texture2D debug;
 
         public Fireball(Texture2D texture, Vector2 position, Vector2 direction) : base(texture)
         {
@@ -26,16 +25,13 @@ namespace Project.Sprites
             rotation = (float)Math.Atan2(direction.Y, direction.X);
 
             Size = new Vector2(Texture.Bounds.Width / 3f, Texture.Bounds.Width / 3f);
-            debug = new Texture2D(texture.GraphicsDevice, 1, 1);
-            debug.SetData(new[] { Color.Red });
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             if (IsActive)
                 spriteBatch.Draw(Texture, Position, null, Color.White, rotation, new Vector2(Texture.Width / 2, Texture.Height / 2), Size / 16, SpriteEffects.None, 0.8f);
-        
-            spriteBatch.Draw(debug, GetBoundingBox(), null, Color.Red, 0f, Vector2.Zero, SpriteEffects.None, 1);}
+        }
 
         public void Update(GameTime gameTime)
         {
