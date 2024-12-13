@@ -23,7 +23,7 @@ namespace Project.Scenes
         static public Texture2D fireballTexture;
         static public Texture2D tilesTexture;
 
-        static public int tileSize = 16;
+        static public int tileSize = 32;
 
         public static Player player;
         private PlayerSword playerSword;

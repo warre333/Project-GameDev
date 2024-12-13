@@ -77,3 +77,11 @@ Code die ik maakte voor het project voordat ik van idee wisselde herbruik ik hie
 
 ## 0.016
 - Added: Game over screen
+
+## 0.017
+- Added: game over scene when dead
+
+## 0.018
+- Added: enemymanager
+    - Spawn more enemies easier
+    - Difficulty option
