@@ -14,9 +14,9 @@ namespace Project.Sprites.Characters.Enemy
     public class Knight : Enemy
     {
         private KnightSword weapon;
-        public Knight(Texture2D texture, Texture2D heartTexture) : base(texture, heartTexture)
+        public Knight(Texture2D texture, Texture2D heartTexture, Vector2 position) : base(texture, heartTexture, position)
         {
-            Position = GameScene.mapManager.GetCurrentMap().MidOfMap; 
+            //Position = GameScene.mapManager.GetCurrentMap().MidOfMap; 
             Speed = new Vector2(2, 1);
             Health = new Health(3, heartTexture);
             Damage = 1;
@@ -37,6 +37,12 @@ namespace Project.Sprites.Characters.Enemy
             float distanceToRight = Vector2.Distance(Position, playerRight);
 
             Vector2 targetPosition = distanceToLeft < distanceToRight ? playerLeft : playerRight;
+
+            Random random = new Random();
+            float randomOffsetX = (float)(random.NextDouble() - 0.5) * 32;
+            float randomOffsetY = (float)(random.NextDouble() - 0.5) * 32;
+            targetPosition += new Vector2(randomOffsetX, randomOffsetY);
+
             Vector2 direction = targetPosition - Position;
 
             if (direction.Length() < 4)

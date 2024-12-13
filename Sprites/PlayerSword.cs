@@ -4,7 +4,7 @@ using Project.Characters;
 using Project.Enums;
 using Project.Inputs;
 using Project.Interfaces;
-using Project.Scenes;
+using Project.Managers;
 using Project.Sprites.Characters.Enemy;
 
 namespace Project.Sprites
@@ -12,8 +12,9 @@ namespace Project.Sprites
     public class PlayerSword : Weapon
     {
         public IInputReader InputReader { get; set; }
+        private EnemyManager enemyManager;
 
-        public PlayerSword(Texture2D texture, Character owner) : base(texture, owner)
+        public PlayerSword(Texture2D texture, Character owner, EnemyManager enemyManager) : base(texture, owner)
         {
             animationState.AddAnimation(CharacterAnimation.IDLE, 128, 128, 4, 4, 0, 0, 1);
             animationState.AddAnimation(CharacterAnimation.ATTACKING_RIGHT, 128, 128, 4, 4, 4, 7, 4);
@@ -21,6 +22,8 @@ namespace Project.Sprites
             animationState.PlayAnimation(CharacterAnimation.IDLE);
 
             Damage = 1;
+
+            this.enemyManager = enemyManager;
         }
 
         public void Update(GameTime gameTime)
@@ -39,7 +42,7 @@ namespace Project.Sprites
         override protected void DealDamage()
         {
             hasAttacked = true;
-            foreach (Enemy enemy in GameScene.enemies)
+            foreach (Enemy enemy in enemyManager.enemies)
             {
                 if (GetBoundingBox().Intersects(enemy.GetBoundingBox()))
                 {
