@@ -90,7 +90,10 @@ namespace Project.Sprites.Characters.Enemy
                 if (fireball.IsActive && fireball.GetBoundingBox().Intersects(GameScene.player.GetBoundingBox()))
                 {
                     fireball.OnCollide(GameScene.player);
-                    GameScene.player.Health.TakeDamage(fireball.Damage);
+                    if (!GameScene.player.Invincible)
+                    {
+                        GameScene.player.Health.TakeDamage(fireball.Damage);
+                    }
                 }
             }
 

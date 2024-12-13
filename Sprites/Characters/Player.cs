@@ -12,6 +12,22 @@ namespace Project.Characters
     {
         public IInputReader InputReader { get; set; }
         public Vector2 Velocity { get; set; }
+        private bool invincible = false;
+        public bool Invincible { 
+            get 
+            {
+                return invincible;
+            } 
+            set 
+            {
+                if(value == true)
+                {
+                    invincibleTimer = 3;
+                }
+                invincible = value;
+            } 
+        }
+        private double invincibleTimer;
         private Camera camera;
         private SceneManager sceneManager;
 
@@ -43,6 +59,7 @@ namespace Project.Characters
         {
             CheckDeath();
             Move();
+            UpdateInvincibleTimer(gameTime);
             base.Update(gameTime);
         }
 
@@ -59,6 +76,19 @@ namespace Project.Characters
             {
                 sceneManager.SetScene(SceneType.GameOver);
             }
+        }
+
+        private void UpdateInvincibleTimer(GameTime gameTime)
+        {
+            if (invincibleTimer <= 0)
+            {
+                invincibleTimer = 0;
+                Invincible = false;
+            } 
+            else 
+            {
+                invincibleTimer -= gameTime.ElapsedGameTime.TotalSeconds;
+            }           
         }
     }
 }

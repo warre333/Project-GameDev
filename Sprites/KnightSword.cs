@@ -42,7 +42,11 @@ namespace Project.Sprites
 
             if (GetBoundingBox().Intersects(GameScene.player.GetBoundingBox()))
             {
-                GameScene.player.Health.TakeDamage(Damage);
+                if (!GameScene.player.Invincible)
+                {
+                    GameScene.player.Health.TakeDamage(Damage);
+                    GameScene.player.Invincible = true;
+                }
             }
         }
 
