@@ -34,7 +34,7 @@ namespace Project
             SceneManager = new SceneManager();
 
             SceneManager.AddScene(SceneType.MainMenu, new StartScene(this));
-            SceneManager.AddScene(SceneType.Game, new GameScene(this));
+            //SceneManager.AddScene(SceneType.Game, new GameScene(this));
             SceneManager.AddScene(SceneType.GameOver, new GameOverScene(this));
 
             SceneManager.SetScene(SceneType.MainMenu);
@@ -51,7 +51,11 @@ namespace Project
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
+                SceneManager.CurrentScene.UnloadContent();
                 SceneManager.SetScene(SceneType.MainMenu);
+                SceneManager.RemoveScene(SceneType.Game);
+            }
 
             SceneManager.Update(gameTime);
 

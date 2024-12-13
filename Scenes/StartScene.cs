@@ -34,9 +34,9 @@ namespace Project.Scenes
 
         private void CreateComponents()
         {
-            easyPlayButton = new StartSceneButton(easyPlayButtonTexture, new Rectangle(ScreenManager.ScreenWidth / 2 - 100, 300, 200, 50));
-            normalPlayButton = new StartSceneButton(normalPlayButtonTexture, new Rectangle(ScreenManager.ScreenWidth / 2 - 100, 370, 200, 50));
-            hardPlayButton = new StartSceneButton(hardPlayButtonTexture, new Rectangle(ScreenManager.ScreenWidth / 2 - 100, 440, 200, 50));
+            easyPlayButton = new DifficultyButton(easyPlayButtonTexture, new Rectangle(ScreenManager.ScreenWidth / 2 - 100, 300, 200, 50), 1);
+            normalPlayButton = new DifficultyButton(normalPlayButtonTexture, new Rectangle(ScreenManager.ScreenWidth / 2 - 100, 370, 200, 50), 2);
+            hardPlayButton = new DifficultyButton(hardPlayButtonTexture, new Rectangle(ScreenManager.ScreenWidth / 2 - 100, 440, 200, 50), 3);
             exitButton = new StartSceneButton(exitButtonTexture, new Rectangle(ScreenManager.ScreenWidth / 2 - 100, 540, 200, 50));
         }
 
@@ -50,11 +50,20 @@ namespace Project.Scenes
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
                 if (easyPlayButton.Contains(mousePosition))
+                {
+                    game.SceneManager.AddScene(SceneType.Game, new GameScene(game, 1));
                     game.SceneManager.SetScene(SceneType.Game);
-                if (normalPlayButton.Contains(mousePosition))
+                }
+                else if (normalPlayButton.Contains(mousePosition))
+                {
+                    game.SceneManager.AddScene(SceneType.Game, new GameScene(game, 2));
                     game.SceneManager.SetScene(SceneType.Game);
-                if (hardPlayButton.Contains(mousePosition))
+                }
+                else if (hardPlayButton.Contains(mousePosition))
+                {
+                    game.SceneManager.AddScene(SceneType.Game, new GameScene(game, 3));
                     game.SceneManager.SetScene(SceneType.Game);
+                }
 
                 if (exitButton.Contains(mousePosition))
                     game.Exit();

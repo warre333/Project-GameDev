@@ -20,6 +20,11 @@ namespace Project.Managers
             Scenes.Add(sceneType, scene);
         }
 
+        public void RemoveScene(SceneType sceneType)
+        {
+            Scenes.Remove(sceneType);
+        }
+
         public void SetScene(SceneType sceneType)
         {
             if (CurrentScene != null)
@@ -28,6 +33,7 @@ namespace Project.Managers
             CurrentScene = Scenes[sceneType];
             CurrentScene.LoadContent();
         }
+
         public void Update(GameTime gameTime)
         {
             CurrentScene?.Update(gameTime);

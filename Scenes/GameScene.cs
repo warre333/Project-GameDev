@@ -30,11 +30,11 @@ namespace Project.Scenes
         public static EnemyManager enemyManager;
         public static MapManager mapManager = new MapManager();
 
-        public GameScene(Game1 game) : base(game)
+        public GameScene(Game1 game, int difficulty) : base(game)
         {
             LoadContent();
             enemyManager = new EnemyManager(fairyTexture, knightTexture, wizardTexture, healthTexture);
-            enemyManager.CreateEnemiesForDifficulty(3);
+            enemyManager.CreateEnemiesForDifficulty(difficulty);
 
             player = new Player(playerTexture, new KeyboardReader(), healthTexture, camera, game.SceneManager);
             playerSword = new PlayerSword(swordTexture, player, enemyManager);
@@ -54,6 +54,11 @@ namespace Project.Scenes
             mapManager.LoadMap("Content/Maps/Map-1.txt");
 
             base.LoadContent();
+        }
+
+        public override void UnloadContent()
+        {
+            game.Content.UnloadAssets(["lancelot_", "excalibur_", "FB001", "merlin_", "mordred_", "morganLeFay_", "heart", "Gungeon tileset"]);
         }
 
         public override void Update(GameTime gameTime)
