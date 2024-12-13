@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Project.Enums;
 using Project.Scenes;
 using Project.Sprites.Characters.Enemy;
 using System;
@@ -26,12 +27,12 @@ namespace Project.Managers
             this.heartTexture = heartTexture;
         }
 
-        public void CreateEnemiesForDifficulty(int difficulty)
+        public void CreateEnemiesForDifficulty(GameDifficulty difficulty)
         {
 
             enemies.Add(new Fairy(fairyTexture, heartTexture, RandomPosition()));
 
-            for (int i = 0; i < difficulty; i++)
+            for (int i = 0; i < (int)difficulty; i++)
             {
                 enemies.Add(new Knight(knightTexture, heartTexture, RandomPosition()));
             }

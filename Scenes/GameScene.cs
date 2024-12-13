@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Project.Inputs;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
+using Project.Enums;
 
 namespace Project.Scenes
 {
@@ -30,7 +31,7 @@ namespace Project.Scenes
         public static EnemyManager enemyManager;
         public static MapManager mapManager = new MapManager();
 
-        public GameScene(Game1 game, int difficulty) : base(game)
+        public GameScene(Game1 game, GameDifficulty difficulty) : base(game)
         {
             LoadContent();
             enemyManager = new EnemyManager(fairyTexture, knightTexture, wizardTexture, healthTexture);

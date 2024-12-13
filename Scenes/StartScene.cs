@@ -34,9 +34,9 @@ namespace Project.Scenes
 
         private void CreateComponents()
         {
-            easyPlayButton = new DifficultyButton(easyPlayButtonTexture, new Rectangle(ScreenManager.ScreenWidth / 2 - 100, 300, 200, 50), 1);
-            normalPlayButton = new DifficultyButton(normalPlayButtonTexture, new Rectangle(ScreenManager.ScreenWidth / 2 - 100, 370, 200, 50), 2);
-            hardPlayButton = new DifficultyButton(hardPlayButtonTexture, new Rectangle(ScreenManager.ScreenWidth / 2 - 100, 440, 200, 50), 3);
+            easyPlayButton = new DifficultyButton(easyPlayButtonTexture, new Rectangle(ScreenManager.ScreenWidth / 2 - 100, 300, 200, 50), Enums.GameDifficulty.EASY);
+            normalPlayButton = new DifficultyButton(normalPlayButtonTexture, new Rectangle(ScreenManager.ScreenWidth / 2 - 100, 370, 200, 50), Enums.GameDifficulty.NORMAL);
+            hardPlayButton = new DifficultyButton(hardPlayButtonTexture, new Rectangle(ScreenManager.ScreenWidth / 2 - 100, 440, 200, 50), Enums.GameDifficulty.HARD);
             exitButton = new StartSceneButton(exitButtonTexture, new Rectangle(ScreenManager.ScreenWidth / 2 - 100, 540, 200, 50));
         }
 
@@ -51,17 +51,17 @@ namespace Project.Scenes
             {
                 if (easyPlayButton.Contains(mousePosition))
                 {
-                    game.SceneManager.AddScene(SceneType.Game, new GameScene(game, 1));
+                    game.SceneManager.AddScene(SceneType.Game, new GameScene(game, Enums.GameDifficulty.EASY));
                     game.SceneManager.SetScene(SceneType.Game);
                 }
                 else if (normalPlayButton.Contains(mousePosition))
                 {
-                    game.SceneManager.AddScene(SceneType.Game, new GameScene(game, 2));
+                    game.SceneManager.AddScene(SceneType.Game, new GameScene(game, Enums.GameDifficulty.NORMAL));
                     game.SceneManager.SetScene(SceneType.Game);
                 }
                 else if (hardPlayButton.Contains(mousePosition))
                 {
-                    game.SceneManager.AddScene(SceneType.Game, new GameScene(game, 3));
+                    game.SceneManager.AddScene(SceneType.Game, new GameScene(game, Enums.GameDifficulty.HARD));
                     game.SceneManager.SetScene(SceneType.Game);
                 }
 
