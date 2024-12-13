@@ -37,7 +37,7 @@ namespace Project
             SceneManager.AddScene(SceneType.Game, new GameScene(this));
             SceneManager.AddScene(SceneType.GameOver, new GameOverScene(this));
 
-            SceneManager.SetScene(SceneType.GameOver);
+            SceneManager.SetScene(SceneType.MainMenu);
 
             base.Initialize();
 

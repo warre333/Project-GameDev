@@ -13,8 +13,9 @@ namespace Project.Characters
         public IInputReader InputReader { get; set; }
         public Vector2 Velocity { get; set; }
         private Camera camera;
+        private SceneManager sceneManager;
 
-        public Player(Texture2D texture, IInputReader inputReader, Texture2D heartTexture, Camera camera) : base(texture, heartTexture)
+        public Player(Texture2D texture, IInputReader inputReader, Texture2D heartTexture, Camera camera, SceneManager sceneManager) : base(texture, heartTexture)
         {
             animationState.AddAnimation(CharacterAnimation.IDLE, 256, 320, 8, 10, 0, 3, 8);
             animationState.AddAnimation(CharacterAnimation.WALK_RIGHT, 256, 320, 8, 10, 8, 11, 8);
@@ -30,6 +31,7 @@ namespace Project.Characters
             Velocity = Vector2.Zero;
 
             this.camera = camera;
+            this.sceneManager = sceneManager;
         }
         override public void Draw(SpriteBatch spriteBatch)
         {
@@ -39,6 +41,7 @@ namespace Project.Characters
 
         public void Update(GameTime gameTime)
         {
+            CheckDeath();
             Move();
             base.Update(gameTime);
         }
@@ -48,6 +51,14 @@ namespace Project.Characters
             CharacterAnimation animation;
             MovementManager.Move(this, animationState, InputReader.ReadInput(), out animation);
             Direction = animation;
+        }
+
+        private void CheckDeath()
+        {
+            if (Health.CurrentHealth <= 0)
+            {
+                sceneManager.SetScene(SceneType.GameOver);
+            }
         }
     }
 }

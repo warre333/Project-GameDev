@@ -34,7 +34,7 @@ namespace Project.Scenes
         {
             LoadContent();
 
-            player = new Player(playerTexture, new KeyboardReader(), healthTexture, camera);
+            player = new Player(playerTexture, new KeyboardReader(), healthTexture, camera, game.SceneManager);
             playerSword = new PlayerSword(swordTexture, player);
             enemies = new List<Enemy>();
             enemies.Add(new Wizard(wizardTexture, healthTexture));
