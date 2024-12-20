@@ -18,7 +18,7 @@ namespace Project
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
 
-        public SceneManager SceneManager { get; set; }
+        public static SceneManager SceneManager { get; set; }
 
         public Game1()
         {
@@ -36,6 +36,7 @@ namespace Project
             SceneManager.AddScene(SceneType.MainMenu, new StartScene(this));
             //SceneManager.AddScene(SceneType.Game, new GameScene(this));
             SceneManager.AddScene(SceneType.GameOver, new GameOverScene(this));
+            SceneManager.AddScene(SceneType.Victory, new VictoryScene(this));
 
             SceneManager.SetScene(SceneType.MainMenu);
 

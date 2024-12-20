@@ -51,18 +51,18 @@ namespace Project.Scenes
             {
                 if (easyPlayButton.Contains(mousePosition))
                 {
-                    game.SceneManager.AddScene(SceneType.Game, new GameScene(game, Enums.GameDifficulty.EASY));
-                    game.SceneManager.SetScene(SceneType.Game);
+                    Game1.SceneManager.AddScene(SceneType.Game, new GameScene(game, Enums.GameDifficulty.EASY));
+                    Game1.SceneManager.SetScene(SceneType.Game);
                 }
                 else if (normalPlayButton.Contains(mousePosition))
                 {
-                    game.SceneManager.AddScene(SceneType.Game, new GameScene(game, Enums.GameDifficulty.NORMAL));
-                    game.SceneManager.SetScene(SceneType.Game);
+                    Game1.SceneManager.AddScene(SceneType.Game, new GameScene(game, Enums.GameDifficulty.NORMAL));
+                    Game1.SceneManager.SetScene(SceneType.Game);
                 }
                 else if (hardPlayButton.Contains(mousePosition))
                 {
-                    game.SceneManager.AddScene(SceneType.Game, new GameScene(game, Enums.GameDifficulty.HARD));
-                    game.SceneManager.SetScene(SceneType.Game);
+                    Game1.SceneManager.AddScene(SceneType.Game, new GameScene(game, Enums.GameDifficulty.HARD));
+                    Game1.SceneManager.SetScene(SceneType.Game);
                 }
 
                 if (exitButton.Contains(mousePosition))

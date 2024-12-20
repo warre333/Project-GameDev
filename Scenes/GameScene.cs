@@ -8,6 +8,7 @@ using Project.Inputs;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using Project.Enums;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Project.Scenes
 {
@@ -37,7 +38,7 @@ namespace Project.Scenes
             enemyManager = new EnemyManager(fairyTexture, knightTexture, wizardTexture, healthTexture);
             enemyManager.CreateEnemiesForDifficulty(difficulty);
 
-            player = new Player(playerTexture, new KeyboardReader(), healthTexture, camera, game.SceneManager);
+            player = new Player(playerTexture, new KeyboardReader(), healthTexture, camera);
             playerSword = new PlayerSword(swordTexture, player, enemyManager);
         }
 
@@ -91,5 +92,6 @@ namespace Project.Scenes
 
             spriteBatch.End();
         }
+
     }
 }

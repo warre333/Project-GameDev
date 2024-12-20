@@ -85,3 +85,6 @@ Code die ik maakte voor het project voordat ik van idee wisselde herbruik ik hie
 - Added: enemymanager
     - Spawn more enemies easier
     - Difficulty option
+
+## 0.019
+- Added: Victory screen

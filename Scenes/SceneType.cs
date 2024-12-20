@@ -10,6 +10,7 @@ namespace Project.Scenes
     {
         MainMenu,
         Game,
-        GameOver
+        GameOver, 
+        Victory
     }
 }

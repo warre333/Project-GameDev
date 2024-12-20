@@ -31,7 +31,7 @@ namespace Project.Characters
         private Camera camera;
         private SceneManager sceneManager;
 
-        public Player(Texture2D texture, IInputReader inputReader, Texture2D heartTexture, Camera camera, SceneManager sceneManager) : base(texture, heartTexture)
+        public Player(Texture2D texture, IInputReader inputReader, Texture2D heartTexture, Camera camera) : base(texture, heartTexture)
         {
             animationState.AddAnimation(CharacterAnimation.IDLE, 256, 320, 8, 10, 0, 3, 8);
             animationState.AddAnimation(CharacterAnimation.WALK_RIGHT, 256, 320, 8, 10, 8, 11, 8);
@@ -47,7 +47,6 @@ namespace Project.Characters
             Velocity = Vector2.Zero;
 
             this.camera = camera;
-            this.sceneManager = sceneManager;
         }
         override public void Draw(SpriteBatch spriteBatch)
         {

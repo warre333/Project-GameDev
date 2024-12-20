@@ -18,6 +18,7 @@ namespace Project.Managers
         private Texture2D wizardTexture;
         private Texture2D heartTexture;
         private Random random = new Random();
+        private SceneManager sceneManager;
         public EnemyManager(Texture2D fairyTexture, Texture2D knightTexture, Texture2D wizardTexture, Texture2D heartTexture)
         {
             enemies = new List<Enemy>();
@@ -25,6 +26,7 @@ namespace Project.Managers
             this.knightTexture = knightTexture;
             this.wizardTexture = wizardTexture;
             this.heartTexture = heartTexture;
+            this.sceneManager = sceneManager;
         }
 
         public void CreateEnemiesForDifficulty(GameDifficulty difficulty)
@@ -56,6 +58,8 @@ namespace Project.Managers
 
         public void Update(GameTime gameTime)
         {
+            OpenVictorySceneWhenEnemiesAreDeath();
+
             for (int i = 0; i < enemies.Count; i++)
             {
                 Enemy enemy = enemies[i];
@@ -82,6 +86,15 @@ namespace Project.Managers
             foreach (Enemy enemy in enemies)
             {
                 enemy.Draw(spriteBatch);
+            }
+        }
+        
+        private void OpenVictorySceneWhenEnemiesAreDeath()
+        {
+            if (enemies.Count == 0)
+            {
+                Game1.SceneManager.SetScene(SceneType.Victory);
+                Game1.SceneManager.RemoveScene(SceneType.Game);
             }
         }
     }
