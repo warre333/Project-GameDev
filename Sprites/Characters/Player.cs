@@ -23,14 +23,13 @@ namespace Project.Characters
             {
                 if(value == true)
                 {
-                    invincibleTimer = 3;
+                    invincibleTimer = 2;
                 }
                 invincible = value;
             } 
         }
         private double invincibleTimer;
         private Camera camera;
-        private SceneManager sceneManager;
 
         public Player(Texture2D texture, IInputReader inputReader, Texture2D heartTexture, Camera camera) : base(texture, heartTexture)
         {
@@ -79,7 +78,7 @@ namespace Project.Characters
         {
             if (Health.CurrentHealth <= 0)
             {
-                sceneManager.SetScene(SceneType.GameOver);
+                Game1.SceneManager.SetScene(SceneType.GameOver);
             }
         }
 

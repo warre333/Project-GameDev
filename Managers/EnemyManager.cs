@@ -18,7 +18,6 @@ namespace Project.Managers
         private Texture2D wizardTexture;
         private Texture2D heartTexture;
         private Random random = new Random();
-        private SceneManager sceneManager;
         public EnemyManager(Texture2D fairyTexture, Texture2D knightTexture, Texture2D wizardTexture, Texture2D heartTexture)
         {
             enemies = new List<Enemy>();
@@ -26,7 +25,6 @@ namespace Project.Managers
             this.knightTexture = knightTexture;
             this.wizardTexture = wizardTexture;
             this.heartTexture = heartTexture;
-            this.sceneManager = sceneManager;
         }
 
         public void CreateEnemiesForDifficulty(GameDifficulty difficulty)
