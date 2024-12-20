@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Project.UI;
 using Project.Enums;
 using Project.Scenes;
+using System.Diagnostics;
 
 namespace Project.Characters
 {
@@ -50,7 +51,12 @@ namespace Project.Characters
         }
         override public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Texture, Position, animationState.GetCurrentFrame().SourceRectangle, Color.White, 0, Vector2.Zero, Size / 16, SpriteEffects.None, 0.9f);
+            Debug.WriteLine(invincibleTimer % 0.2);
+            if(invincible && invincibleTimer % 0.2 < 0.05)
+                spriteBatch.Draw(Texture, Position, animationState.GetCurrentFrame().SourceRectangle, Color.Red, 0, Vector2.Zero, Size / 16, SpriteEffects.None, 0.9f);
+            else
+                spriteBatch.Draw(Texture, Position, animationState.GetCurrentFrame().SourceRectangle, Color.White, 0, Vector2.Zero, Size / 16, SpriteEffects.None, 0.9f);
+
             Health.Draw(spriteBatch, new Vector2(-camera.Transform.Translation.X + 10, -camera.Transform.Translation.Y + 10), 32);
         }
 

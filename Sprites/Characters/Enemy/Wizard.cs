@@ -93,6 +93,7 @@ namespace Project.Sprites.Characters.Enemy
                     if (!GameScene.player.Invincible)
                     {
                         GameScene.player.Health.TakeDamage(fireball.Damage);
+                        GameScene.player.Invincible = true;
                     }
                 }
             }
