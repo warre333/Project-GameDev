@@ -19,10 +19,6 @@ namespace Project.Scenes
             base.LoadContent();
         }
 
-        override public void Update(GameTime gameTime)
-        {
-        }
-
         override public void Draw(SpriteBatch spriteBatch)
         {
             if (!isLoaded) return;
