@@ -11,7 +11,6 @@ namespace Project.Sprites
 {
     public class PlayerSword : Weapon
     {
-        public IInputReader InputReader { get; set; }
         private EnemyManager enemyManager;
 
         public PlayerSword(Texture2D texture, Character owner, EnemyManager enemyManager) : base(texture, owner)
@@ -39,7 +38,7 @@ namespace Project.Sprites
             base.Update(gameTime);
         }
 
-        override protected void DealDamage()
+        override public void DealDamage()
         {
             hasAttacked = true;
             foreach (Enemy enemy in enemyManager.enemies)

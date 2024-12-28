@@ -49,7 +49,7 @@ namespace Project.Managers
             int lengthY = GameScene.mapManager.GetCurrentMap().Tiles.GetLength(1);
 
             float randomX = (float)(random.NextDouble() * (lengthX - 4) * GameScene.tileSize + 2 * GameScene.tileSize);
-            float randomY = (float)(random.NextDouble() * (lengthY - 4) * GameScene.tileSize + 2 * GameScene.tileSize);
+            float randomY = (float)(random.NextDouble() * (lengthY - 6) * GameScene.tileSize + 2 * GameScene.tileSize);
 
             return new Vector2(randomX, randomY);
         }

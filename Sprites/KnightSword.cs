@@ -36,7 +36,7 @@ namespace Project.Sprites
             base.Update(gameTime);
         }
 
-        override protected void DealDamage()
+        override public void DealDamage()
         {
             hasAttacked = true;
 

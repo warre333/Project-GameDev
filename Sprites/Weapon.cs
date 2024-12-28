@@ -8,11 +8,10 @@ using Project.Sprites.Characters.Enemy;
 
 namespace Project.Sprites
 {
-    public abstract class Weapon : Sprite, ICollidable, IInputReadable
+    public abstract class Weapon : Sprite, IWeapon
     {
         public int Damage { get; set; }
         public Character Owner { get; set; }
-        public IInputReader InputReader { get; set; }
 
         protected bool isVisible;
         protected double attackTimer;
@@ -86,6 +85,7 @@ namespace Project.Sprites
             }
         }
 
-        protected abstract void DealDamage();
+        public abstract void DealDamage();
+
     }
 }
