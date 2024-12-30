@@ -25,6 +25,12 @@
 /processorParam:TextureFormat=Color
 /build:../assets/heart.png;heart.png
 
+#begin Audio/Decisive Battle.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Audio/Decisive Battle.mp3
+
 #begin BokorFont.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor

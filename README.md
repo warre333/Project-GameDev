@@ -22,3 +22,7 @@ Dungeon game, a player can walk around in a automatic generated map. Monsters sp
 - [x] Level & difficulty system
 - [x] Start screen
 - [x] Game over screen
+- [x] Music
+
+Music:
+- Decisive Battle: https://soundcloud.com/xdeviruchi/decisive-battle

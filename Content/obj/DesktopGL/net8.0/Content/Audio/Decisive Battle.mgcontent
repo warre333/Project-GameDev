@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/Audio/Decisive Battle.mp3</SourceFile>
+  <SourceTime>2024-12-30T14:02:28.65995+01:00</SourceTime>
+  <DestFile>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/bin/DesktopGL/Content/Audio/Decisive Battle.xnb</DestFile>
+  <DestTime>2024-12-30T14:18:16.9322345+01:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2024-08-16T19:05:56+02:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/warre/OneDrive/Bureaublad/School/2/Game development/Project/Content/bin/DesktopGL/Content/Audio/Decisive Battle.ogg</string>
+  </BuildOutput>
+</PipelineBuildEvent>

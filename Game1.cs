@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using Project.Sprites.Characters.Enemy;
 using Project.Sprites;
 using Project.Scenes;
+using Microsoft.Xna.Framework.Media;
 
 namespace Project
 {
@@ -17,6 +18,7 @@ namespace Project
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
+        private AudioManager audioManager;
 
         public static SceneManager SceneManager { get; set; }
 
@@ -32,9 +34,9 @@ namespace Project
             ScreenManager.Setup(graphics, Window);
 
             SceneManager = new SceneManager();
+            audioManager = new AudioManager();
 
             SceneManager.AddScene(SceneType.MainMenu, new StartScene(this));
-            //SceneManager.AddScene(SceneType.Game, new GameScene(this));
             SceneManager.AddScene(SceneType.GameOver, new GameOverScene(this));
             SceneManager.AddScene(SceneType.Victory, new VictoryScene(this));
 
@@ -42,11 +44,13 @@ namespace Project
 
             base.Initialize();
 
+            audioManager.Play();
         }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            audioManager.LoadContent(Content);
         }
 
         protected override void Update(GameTime gameTime)
